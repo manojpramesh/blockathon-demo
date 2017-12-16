@@ -6,9 +6,19 @@ module.exports = {
         privateKey: '7337912aa62e810e59bc5a7de90f56287cf84dc8c0d83db2582393be1ed9c9f8',
         password: 'Innov@teD@ily1'
     }],
-    sample_contract: {
-        address: '0x7111c7811a0df0b174c92a9af54c2ce155a4e802',
-        contract_name: '',
+    infinity: {
+        address: '',
+        contractName: 'Infinity',
+        abi: []
+    },
+    identity: {
+        address: '',
+        contractName: 'Identity',
+        abi: []
+    },
+    token: {
+        address: '',
+        contractName: 'Token',
         abi: []
     }
 };
