@@ -80,9 +80,10 @@ module.exports = {
         });
     },
 
-    writeContract: (from, contractAddress, abi, value, funcName, params) => {
+    writeContract: (from, password, contractAddress, abi, value, funcName, params) => {
         return new Promise((resolve, reject) => {
             try {
+                web3.personal.unlockAccount(from, password);
                 let contract = web3.eth.contract(abi).at(contractAddress);
                 resolve(contract[funcName](...params, {
                     from: from,

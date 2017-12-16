@@ -3,32 +3,28 @@ const mongoConfig = require('../config/mongo');
 
 module.exports = {
 
-    user: function(name, email, company, role, password, address, privatekey) {
+    user: function(name, email, password, role, address, privateKey) {
         this.name = name;
         this.email = email;
         this.password = password || null;
-        this.company = company;
         this.role = role;
         this.address = address;
+        this.privateKey = privateKey;
     },
 
     addUser: (data, cb) => {
-        mongoHelper.insertDocument(data, mongoConfig.userCollection, cb);
+        mongoHelper.insertDocument(data, mongoConfig.user, cb);
     },
 
     editUser: (condition, data, cb) => {
-        mongoHelper.updateDocument(condition, data, mongoConfig.userCollection, cb);
+        mongoHelper.updateDocument(condition, data, mongoConfig.user, cb);
     },
 
     searchUser: (condition, exclude, cb) => {
-        mongoHelper.searchDocument(condition, exclude, mongoConfig.userCollection, cb);
+        mongoHelper.searchDocument(condition, exclude, mongoConfig.user, cb);
     },
 
     deleteUser: (condition, cb) => {
-        mongoHelper.deleteDocument(condition, mongoConfig.userCollection, cb);
-    },
-
-    searchRoles: (condition, exclude, cb) => {
-        mongoHelper.searchDocument(condition, exclude, mongoConfig.roleCollection, cb);
+        mongoHelper.deleteDocument(condition, mongoConfig.user, cb);
     }
 };
