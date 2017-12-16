@@ -9,6 +9,11 @@ const cors = require('cors');
 
 var app = express();
 
+const index = require('./routes/index');
+const users = require('./routes/user');
+const token = require('./routes/token');
+const identity = require('./routes/identity');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -24,10 +29,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({ 'secret': 'appsecret', resave: true, saveUninitialized: true }));
 
 // uncomment if you are using passport
-//require('./config/passport')(app);
+require('./config/passport')(app);
 
 app.use('/', index);
 app.use('/api/users', users);
+app.use('/api/token', token);
+app.use('/api/identity', identity);
 
 // For angular routing.
 app.get('*', function(req, res) {

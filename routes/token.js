@@ -17,9 +17,9 @@ router.get('/checkBalance', (req, res) => {
 });
 
 router.post('/Transfer', (req, res) => {
-    contract.writeContractRaw(
-            config.accounts[0].address, config.accounts[0].privateKey, 0,
-            config.token.address, config.token.abi,
+    contract.writeContract(
+            config.accounts[0].address, config.accounts[0].password,
+            config.token.address, config.token.abi, 0,
             'transfer', [req.body.to, req.body.value])
         .then(result => {
             res.json(result);
@@ -28,10 +28,22 @@ router.post('/Transfer', (req, res) => {
         });
 });
 
+router.post('/TransferFrom', (req, res) => {
+    contract.writeContract(
+            config.accounts[0].address, config.accounts[0].password,
+            config.token.address, config.token.abi, 0,
+            'transferFrom', [req.body.from, req.body.to, req.body.value])
+        .then(result => {
+            res.json(result);
+        }).catch(error => {
+            res.status(400).send(error);
+        });
+});
+
 router.post('/Mint', (req, res) => {
-    contract.writeContractRaw(
-            config.accounts[0].address, config.accounts[0].privateKey, 0,
-            config.token.address, config.token.abi,
+    contract.writeContract(
+            config.accounts[0].address, config.accounts[0].password,
+            config.token.address, config.token.abi, 0,
             'mint', [req.body.to, req.body.value])
         .then(result => {
             res.json(result);
