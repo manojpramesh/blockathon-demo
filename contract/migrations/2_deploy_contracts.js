@@ -1,5 +1,5 @@
-var InfinityContract = artifacts.require("./Infinity.sol");
+var TokenContract = artifacts.require("./Token.sol");
 
 module.exports = function(deployer) {
-    deployer.deploy(InfinityContract);
+    deployer.deploy(TokenContract);
 };
