@@ -6,6 +6,8 @@ Built as part of Blockathon For Change 2017.
 
 Live demo is available [here](http://devrex.southeastasia.cloudapp.azure.com:3000)
 
+Vide demo is available [here](https://youtu.be/clHeTs8LGwQ)
+
 ## Introduction
 
 Blockchain technology is a revolution in systems of record. The idea of blockchain technology can now be applied to any need for a trustworthy record. Blockchain serves as a ledger that is incorruptible, transparent, and bypasses censorship. By tackling issues of financial, political and institutional corruption, this has the potential to create massive social change and greatly protect the human rights of every individual.
