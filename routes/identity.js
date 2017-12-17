@@ -26,7 +26,9 @@ router.post('/createIdentity', (req, res) => {
                     identity: result.args.identity,
                     data: JSON.parse(req.body.data)
                 };
-                user.editUser({ address: req.body.user }, identity, (err, result) => {
+                user.editUser({
+                    address: req.body.user
+                }, identity, (err, result) => {
                     res.json(identity.identity);
                 });
             });
@@ -69,7 +71,7 @@ router.get('/endorsements', (req, res) => {
 router.post('/addDocument', (req, res) => {
     contract.writeContract(
             config.accounts[0].address, config.accounts[0].password,
-            config.token.address, config.token.abi, 0,
+            config.identity.address, config.identity.abi, 0,
             'transfer', [req.body.to, req.body.value])
         .then(result => {
             res.json(result);
@@ -79,7 +81,7 @@ router.post('/addDocument', (req, res) => {
 });
 
 router.get('/getDocument', (req, res) => {
-    contract.readContract([req.query.address], config.infinity.address, config.infinity.abi, 'identityList')
+    contract.readContract([req.query.address], config.identity.address, config.identity.abi, 'identityList')
         .then(result => {
             return contract.readContract(['aadhar'], result, config.identity.abi, 'documents');
         }).then(result => {
@@ -92,13 +94,23 @@ router.get('/getDocument', (req, res) => {
 router.post('/deleteDocument', (req, res) => {
     contract.writeContract(
             config.accounts[0].address, config.accounts[0].password,
-            config.token.address, config.token.abi, 0,
+            config.identity.address, config.identity.abi, 0,
             'transfer', [req.body.to, req.body.value])
         .then(result => {
             res.json(result);
         }).catch(error => {
             res.status(400).send(error);
         });
+});
+
+router.get('/getEvents', (req, res) => {
+    const events = contract.getAllEvents(
+        config.infinity.abi, config.infinity.address,
+        'Events');
+
+    events.get(function(error, logs) {
+        res.json(logs);
+    });
 });
 
 

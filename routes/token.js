@@ -52,4 +52,14 @@ router.post('/Mint', (req, res) => {
         });
 });
 
+router.get('/getEvents', (req, res) => {
+    const events = contract.getAllEvents(
+        config.token.abi, config.token.address,
+        'Transfer');
+
+    events.get(function(error, logs) {
+        res.json(logs);
+    });
+});
+
 module.exports = router;
