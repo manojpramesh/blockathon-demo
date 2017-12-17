@@ -57,3 +57,6 @@ typings/
 # dotenv environment variables file
 .env
 
+contract/build
+.vscode
+blockathon-ui/dist

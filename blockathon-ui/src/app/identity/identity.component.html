@@ -1,0 +1,158 @@
+<div id="wrapper">
+    <app-navbar></app-navbar>
+    <!-- Start main-content -->
+    <div class="main-content">
+        <!-- divider: Donate Now -->
+        <section id="donate-now" class="divider" data-bg-img="assets/images/bg/bg7.jpg">
+            <div class="container pt-0 pb-0">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="bg-light-transparent p-40">
+                            <h4 class="text-uppercase line-bottom">Create Identity</h4>
+
+
+                            <div class="row">
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <label>Name <small>*</small></label>
+                                        <select class="select form-control" [(ngModel)]="identity.name" name="currentSearch">
+                                            <option *ngFor="let field of users" [value]="field.name">{{ field.name }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <label>Phone <small>*</small></label>
+                                        <input name="form_email" class="form-control required email" type="email" placeholder="Enter Phone" [(ngModel)]="identity.phone">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <label>House Number <small>*</small></label>
+                                        <input name="form_email" class="form-control required email" type="email" placeholder="Enter House Number" [(ngModel)]="identity.house">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <label>Street <small>*</small></label>
+                                        <input name="form_email" class="form-control required email" type="email" placeholder="Enter Street address" [(ngModel)]="identity.street">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <label>State <small>*</small></label>
+                                        <input name="form_email" class="form-control required email" type="text" placeholder="Enter State" [(ngModel)]="identity.state">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <label>Aadhar Number <small>*</small></label>
+                                        <input name="form_email" class="form-control required email" type="text" placeholder="Enter UID Number" [(ngModel)]="identity.aadhar">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <label>Files<small>*</small></label>
+                                        <input name="form_email" class="form-control required email" type="file">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group mb-20">
+                                        <button type="button" class="btn btn-flat btn-dark btn-theme-colored mt-10 pl-30 pr-30" (click)="createIdentity()">REGISTER</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="donate-now" class="divider" data-bg-img="assets/images/bg/bg7.jpg">
+            <div class="container pt-0 pb-0">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="bg-light-transparent p-40">
+                            <h4 class="text-uppercase line-bottom">Read Identity</h4>
+
+                            <div class="row">
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <label>Name <small>*</small></label>
+                                        <select class="select form-control" [(ngModel)]="getIdentityAddress" name="currentSearch">
+                                            <option *ngFor="let field of users" [value]="field.identity">{{ field.name }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" *ngIf="!getIdentityAddress">
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <label> No Identity found </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group mb-20">
+                                        <button type="button" class="btn btn-flat btn-dark btn-theme-colored mt-10 pl-30 pr-30" (click)="getIdentity()">Get</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <code>
+                                    {{ IdentityData }}
+                                </code>
+
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+    </div>
+    <!-- end main-content -->
+
+    <!-- Footer -->
+    <footer id="footer" class="footer pb-0" data-bg-img="assets/images/footer-bg.png" data-bg-color="#25272e">
+        <div class="container-fluid bg-theme-colored p-20">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <p class="text-white font-11 m-0">Copyright &copy;2017 Manoj. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+</div>
+<!-- end wrapper -->

@@ -1,0 +1,56 @@
+<!-- Header -->
+<header id="header" class="header layer-overlay overlay-dark" data-bg-img="assets/images/bg/bg2.jpg">
+    <div class="header-nav">
+        <div class="header-nav-wrapper">
+            <div class="container-fluid p-0">
+                <div id="menuzord-verticalnav" class="menuzord">
+                    <a class="menuzord-brand p-30"><img width="200" alt="logo" src="assets/images/logo.png"></a>
+                    <ul class="menuzord-menu onepage-nav">
+                        <li class="active"><a [routerLink]="['/home']" routerLinkActive="active">Home</a> </li>
+                        <li><a [routerLink]="['/identity']" routerLinkActive="active">Identity</a></li>
+                        <li><a [routerLink]="['/renumeration']" routerLinkActive="active">Token</a></li>
+                        <li><a [routerLink]="['/users']" routerLinkActive="active">Users</a></li>
+                        <li><a [routerLink]="['/audit']" routerLinkActive="active">Audit</a></li>
+                        <li><a [routerLink]="['/contact']" routerLinkActive="active">Contact</a></li>
+                        <li><a (click)="logout()">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+                <div class="vertical-nav-widget p-30 pt-10">
+                    <div class="widget no-border">
+                        <ul>
+                            <li class="font-14 mb-5">
+                                <i class="fa fa-user text-theme-colored"></i>
+                                <a class="text-gray">{{user.name}}</a>
+                            </li>
+                            <li class="font-14 mb-5">
+                                <i class="fa fa-envelope-o text-theme-colored"></i>
+                                <a class="text-gray">{{user.email}}</a>
+                            </li>
+                            <li class="font-14 mb-5">
+                                <i class="fa fa-key text-theme-colored"></i>
+                                <a class="text-gray">{{user.address}}</a>
+                            </li>
+                            <li class="font-14 mb-5">
+                                <i class="fa fa-flag text-theme-colored"></i>
+                                <a class="text-gray">{{user.role}}</a>
+                            </li>
+                            <li class="font-14 mb-5">
+                                <i class="fa fa-check text-theme-colored"></i>
+                                <a class="text-gray">{{user.identity || 'No Identity created'}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="widget">
+                        <ul class="styled-icons icon-dark icon-theme-colored icon-sm">
+                            <li><a><i class="fa fa-google-plus"></i></a></li>
+                            <li><a><i class="fa fa-facebook"></i></a></li>
+                            <li><a><i class="fa fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                    <p>Project for Blockcathon</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,60 @@
+<div id="wrapper">
+    <app-navbar></app-navbar>
+    <!-- Start main-content -->
+    <div class="main-content">
+        <!-- divider: Donate Now -->
+        <section id="donate-now" class="divider" data-bg-img="assets/images/bg/bg7.jpg">
+            <div class="container pt-0 pb-0">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="bg-light-transparent p-40">
+                            <h4 class="text-uppercase line-bottom">Users list</h4>
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Address</th>
+                                        <th>Identity</th>
+                                        <th>Role</th>
+                                        <th>Endorse</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let field of users; let i = index">
+                                        <td> {{ i + 1 }} </td>
+                                        <td> {{ field.name }} </td>
+                                        <td> {{ field.address }} </td>
+                                        <td> {{ field.identity || 'NA' }} </td>
+                                        <td> {{ field.role }} </td>
+                                        <td> <button type="button" class="btn btn-success">Endorse</button> </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+    <!-- end main-content -->
+
+    <!-- Footer -->
+    <footer id="footer" class="footer pb-0" data-bg-img="assets/images/footer-bg.png" data-bg-color="#25272e">
+        <div class="container-fluid bg-theme-colored p-20">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <p class="text-white font-11 m-0">Copyright &copy;2017 Manoj. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+</div>
+<!-- end wrapper -->

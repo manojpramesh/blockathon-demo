@@ -1,0 +1,22 @@
+<div class="login-container">
+    <div class="login-page">
+        <div class="form">
+            <form class="register-form" *ngIf="!loginForm">
+                <input type="text" placeholder="name" name="name" [(ngModel)]="register_name" />
+                <input type="password" placeholder="password" name="pass" [(ngModel)]="register_password" />
+                <input type="email" placeholder="email address" name="email" [(ngModel)]="register_email" />
+                <select class="select form-control" [(ngModel)]="register_role" name="currentSearch">
+                    <option *ngFor="let field of roles" [selected]="field" [value]="field">{{ field }}</option>
+                </select>
+                <button type="button" (click)="register()">REGISTER</button>
+                <p class="message">Already registered? <a (click)="toggleForm()">Sign In</a></p>
+            </form>
+            <form class="login-form" *ngIf="loginForm">
+                <input type="text" placeholder="username" name="name" [(ngModel)]="login_name" />
+                <input type="password" placeholder="password" name="password" [(ngModel)]="login_password" />
+                <button type="button" (click)="login()">LOGIN</button>
+                <p class="message">Not registered? <a (click)="toggleForm()">Create an account</a></p>
+            </form>
+        </div>
+    </div>
+</div>
