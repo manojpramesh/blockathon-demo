@@ -14,6 +14,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { UsersComponent } from './users/users.component';
 import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
+import { AuditComponent } from './audit/audit.component';
+import { StringPipe } from './service/string.pipe';
+import { User } from './user.shared';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -22,7 +25,8 @@ const appRoutes: Routes = [
   { path: 'users', component: UsersComponent },
   { path: 'login', component: LoginComponent },
   { path: 'contact', component: ContactComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' }
+  { path: 'audit', component: AuditComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 
 
@@ -35,7 +39,9 @@ const appRoutes: Routes = [
     NavbarComponent,
     UsersComponent,
     LoginComponent,
-    ContactComponent
+    ContactComponent,
+    AuditComponent,
+    StringPipe
   ],
   imports: [
     BrowserModule,
@@ -48,7 +54,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [],
+  providers: [User],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
