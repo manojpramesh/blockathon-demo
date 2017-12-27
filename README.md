@@ -1,4 +1,4 @@
-## One of the winning projects in [Blockathon for change](http://blockathonforchange.com/) Hackathon by Startup Mission.
+### One of the winning projects in [Blockathon for change](http://blockathonforchange.com/) Hackathon by Startup Mission.
 
 # Project Infinity
 
