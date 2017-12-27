@@ -1,10 +1,10 @@
+## One of the winning projects in [Blockathon for change](http://blockathonforchange.com/) Hackathon by Startup Mission.
+
 # Project Infinity
 
 ### Blockchain based solution for Societal Issues of Migrant Labour.
 
 Built as part of Blockathon For Change 2017.
-
-Live demo is available [here](http://devrex.southeastasia.cloudapp.azure.com:3000)
 
 Vide demo is available [here](https://youtu.be/clHeTs8LGwQ)
 
